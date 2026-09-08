@@ -21,7 +21,7 @@ cd aula-06 && mvn -pl cotacao-service spring-boot:run    # 8082
 cd aula-06 && mvn -pl cambio-service  spring-boot:run    # 8083
 ```
 
-> Na rede da Caixa, acrescente `-s ../../../../ambiente/settings.xml`.
+> Na rede corporativa, acrescente `-s ../../../../ambiente/settings.xml`.
 
 **Abra `http://localhost:8761` e projete na tela.** O painel do Eureka é a melhor parte da
 aula: os três nomes aparecendo em *Instances currently registered*, um de cada vez, conforme
@@ -71,7 +71,7 @@ mvn -pl cliente-service spring-boot:run -Dspring-boot.run.arguments=--server.por
 
 3. Espere o painel do Eureka mostrar a instância nova e repita o `POST /ordens`. **Funciona.**
 
-Pergunte à turma: *na Aula 5, quantos arquivos precisaríamos editar para essa mudança de porta?*
+Para pensar: *na Aula 5, quantos arquivos precisaríamos editar para essa mudança de porta?*
 (Um `application.yml` e um restart do `cambio-service`. Aqui: zero.)
 
 E o passo seguinte, se quiser mostrar load balancing: suba **duas** instâncias do

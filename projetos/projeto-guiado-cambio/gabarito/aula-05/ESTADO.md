@@ -27,7 +27,7 @@ cd aula-05 && mvn -pl cotacao-service spring-boot:run     # http://localhost:808
 cd aula-05 && mvn -pl cambio-service spring-boot:run      # http://localhost:8083
 ```
 
-> Na rede da Caixa, acrescente `-s ../../../../ambiente/settings.xml` a cada comando.
+> Na rede corporativa, acrescente `-s ../../../../ambiente/settings.xml` a cada comando.
 
 Consoles H2 (usuário `sa`, senha vazia): `http://localhost:808X/h2-console`.
 

@@ -171,7 +171,7 @@ O `getInstance()` chamado lá dentro é uma dependência **escondida**: não apa
 construtor, não aparece na assinatura, e o teste não tem como substituí-la. É estado global
 com roupa de padrão de projeto.
 
-> **Pergunte à turma:** se o escopo padrão do Spring já é singleton, o padrão Singleton do GoF
+> **Para pensar:** se o escopo padrão do Spring já é singleton, o padrão Singleton do GoF
 > morreu? *Não* — ele continua valendo onde não há container: bibliotecas, utilitários, código
 > sem framework. O que mudou é que **dentro de uma aplicação Spring, escrever `getInstance()`
 > à mão quase sempre é trabalho perdido com um efeito colateral ruim.**

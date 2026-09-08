@@ -71,7 +71,7 @@ Tudo `final`, tudo obrigatório, tudo visível. `OrdemServiceTest` monta o objet
 sem contexto Spring nenhum. E o Spring nem precisa do `@Autowired`: com **um único
 construtor**, ele infere.
 
-> **Pergunte à turma:** cinco parâmetros já é demais? *Talvez.* É a conta a pagar por ter
+> **Para pensar:** cinco parâmetros já é demais? *Talvez.* É a conta a pagar por ter
 > quebrado o SRP em pedaços — e é uma conta honesta: cada parâmetro tem um nome que diz o que
 > faz. Compare com a alternativa: uma classe de 120 linhas fazendo tudo.
 
@@ -284,7 +284,7 @@ O ponto mais forte do ISP aqui é uma **ausência**: no `cambio-service` **não 
 melhor do que qualquer comentário. No `cliente-service`, onde os dois usos existem de fato,
 as duas interfaces existem.
 
-> **Pergunte à turma:** e se amanhã o câmbio precisar cadastrar? Aí a interface nasce —
+> **Para pensar:** e se amanhã o câmbio precisar cadastrar? Aí a interface nasce —
 > quando o caso real aparecer, não antes. Criar `CadastroCliente` "por simetria" seria
 > abstração especulativa: código morto com aparência de arquitetura.
 

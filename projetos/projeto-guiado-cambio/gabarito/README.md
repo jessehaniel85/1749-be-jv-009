@@ -117,7 +117,7 @@ Nenhuma linha de Java muda entre os dois modos — só a origem do endereço. De
 | Provedor de cotação **local** | ✅ padrão, testado |
 | Provedor de cotação **externo** (awesomeapi) | ⚠️ código e Adapter testados em unidade; a chamada HTTP real **não** foi exercitada (rede corporativa bloqueia) |
 | Plano C (`-Dspring-boot.run.profiles=plano-c`) | ⚠️ configuração escrita e revisada; não exercitada em runtime |
-| Resolução dos artefatos Spring Cloud **no Nexus Caixa** | ❌ pendência de ambiente — ver `ambiente/checklist-semana-0.md`, seção 3 |
+| Resolução dos artefatos Spring Cloud **no Nexus corporativo** | ❌ pendência de ambiente — ver `ambiente/checklist-semana-0.md`, seção 3 |
 
 ## Regras do gabarito
 

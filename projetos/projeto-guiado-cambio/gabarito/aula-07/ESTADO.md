@@ -51,7 +51,7 @@ Plano C (sem Eureka), três terminais:
 mvn -pl <modulo> spring-boot:run -Dspring-boot.run.profiles=plano-c
 ```
 
-Na rede da Caixa, acrescente `-s ../../../../ambiente/settings.xml`.
+Na rede corporativa, acrescente `-s ../../../../ambiente/settings.xml`.
 
 ## Prova de que o comportamento não mudou
 
@@ -87,7 +87,7 @@ grep -rl "import feign" aula-07/cambio-service/src/main
 # → infra/CotacaoClientAdapter.java   ela para na INFRA
 ```
 
-**Pergunte à turma:** *quantos arquivos eu preciso reescrever para trocar Feign por gRPC?*
+**Para pensar:** *quantos arquivos eu preciso reescrever para trocar Feign por gRPC?*
 Na Aula 6: três, em três camadas. Aqui: dois, na mesma camada — e o domínio nem fica sabendo.
 
 Segunda pergunta, mais difícil: *valeu o preço?* Nasceram duas interfaces, dois records de

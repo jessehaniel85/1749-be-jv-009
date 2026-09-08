@@ -47,7 +47,7 @@ mvn -pl cambio-service   spring-boot:run   # 8083
 ```
 
 Plano C (sem Eureka): `-Dspring-boot.run.profiles=plano-c` nos três serviços.
-Na rede da Caixa, acrescente `-s ../../../../ambiente/settings.xml`.
+Na rede corporativa, acrescente `-s ../../../../ambiente/settings.xml`.
 
 ## A demonstração da aula: as duas moedas lado a lado
 
