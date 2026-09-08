@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discovery-server
+
+eureka:
+  client:
+    # O servidor NAO se registra em si mesmo e NAO baixa registro de ninguem:
+    # nesta topologia ele e o unico no do cluster.
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    # Desliga o modo de auto-preservacao. Em producao ele PROTEGE contra
+    # particao de rede (o Eureka segura instancias que pararam de renovar,
+    # supondo que o problema e a rede e nao o servico). Em aula, ele so
+    # atrapalha: um servico derrubado no Ctrl+C ficaria "no ar" por minutos.
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+
+# O painel do Eureka fica em http://localhost:8761

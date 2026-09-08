@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cotacao-service
+  datasource:
+    url: jdbc:h2:mem:cotacaodb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    # necessario para o data.sql rodar DEPOIS do Hibernate criar as tabelas
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+cotacao:
+  # local (padrao, rede corporativa) | externo (awesomeapi, fora da rede)
+  provedor: local
+  externo:
+    url: https://economia.awesomeapi.com.br

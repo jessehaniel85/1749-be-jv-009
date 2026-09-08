@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- POM pai AGREGADOR: nao gera jar, so amarra os modulos e centraliza versoes. -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.9</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>br.com.ada.cambio</groupId>
+  <artifactId>cambio-aula-05</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>Cambio :: Aula 05 :: quebra do monolito</name>
+  <description>Tres microsservicos independentes conversando por HTTP com URL fixa.</description>
+
+  <properties>
+    <java.version>21</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <modules>
+    <module>cliente-service</module>
+    <module>cotacao-service</module>
+    <module>cambio-service</module>
+  </modules>
+</project>

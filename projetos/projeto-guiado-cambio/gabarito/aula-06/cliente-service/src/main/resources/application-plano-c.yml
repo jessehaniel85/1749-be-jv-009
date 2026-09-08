@@ -1,0 +1,7 @@
+# PLANO C — roda sem Eureka (o servico nao tenta se registrar).
+#   mvn -pl <modulo> spring-boot:run -Dspring-boot.run.profiles=plano-c
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false

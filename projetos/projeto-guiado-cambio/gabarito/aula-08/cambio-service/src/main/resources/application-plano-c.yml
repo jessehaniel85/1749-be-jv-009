@@ -1,0 +1,33 @@
+# PLANO C — mesmo desenho, sem Eureka.
+#
+# Use quando o Nexus corporativo nao resolver os artefatos do Netflix Eureka,
+# ou quando quiser rodar so os 3 servicos sem subir o discovery-server.
+#
+#   mvn -pl cambio-service spring-boot:run -Dspring-boot.run.profiles=plano-c
+#
+# O que muda: NADA em Java. Os @FeignClient continuam iguais; apenas a
+# propriedade 'servicos.*.url' passa a existir, e o Feign, ao ver a url
+# preenchida, deixa de perguntar ao Eureka.
+
+eureka:
+  client:
+    enabled: false          # nao registra e nao consulta o catalogo
+    register-with-eureka: false
+    fetch-registry: false
+
+servicos:
+  cliente:
+    url: http://localhost:8081
+  cotacao:
+    url: http://localhost:8082
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          # 'default' vale para todos os @FeignClient deste servico
+          default:
+            connect-timeout: 3000
+            read-timeout: 3000
+            logger-level: basic

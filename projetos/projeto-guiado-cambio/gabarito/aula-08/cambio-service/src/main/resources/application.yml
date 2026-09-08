@@ -1,0 +1,48 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    # Este nome e a "identidade" do servico no Eureka.
+    name: cambio-service
+  datasource:
+    url: jdbc:h2:mem:cambiodb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  cloud:
+    openfeign:
+      client:
+        config:
+          # Timeout continua obrigatorio: mudou o cliente HTTP, nao a fisica da rede.
+          default:
+            connect-timeout: 3000
+            read-timeout: 3000
+            logger-level: basic
+
+# Aula 6: NAO ha mais URL de vizinho aqui.
+# Os @FeignClient usam 'servicos.*.url' com valor padrao VAZIO; vazio significa
+# "resolva pelo Eureka". O perfil 'plano-c' preenche essas propriedades e a
+# mesma anotacao passa a apontar para URL fixa - sem tocar em uma linha de Java.
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    # Padrao e 30s. Em aula, 5s: sem isso um servico recem-subido demora ate
+    # meio minuto para ser ENXERGADO pelos outros (mesmo ja aparecendo no painel),
+    # e a demonstracao vira espera constrangedora.
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    # Em aula, renovacao rapida para o registro refletir Ctrl+C quase na hora.
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
